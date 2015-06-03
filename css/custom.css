@@ -1,0 +1,122 @@
+.reveal{
+    color: #3AFCD9;
+}
+
+.reveal .colora{
+    color: #3AFCD9;
+}
+
+.reveal .colorb{
+    color: #FFF1B0;
+}
+
+.reveal .colorc{
+    color: #82E8AE;
+}
+
+.reveal .colord{
+    color: #FF4066;
+}
+
+.reveal .colore{
+    color: #FFF;
+}
+
+.reveal .colorf{
+    color: #002B36;
+}
+
+#logo{
+    border: 0px;
+    box-shadow: 0px 0px 0px;
+    background: none;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 70px;
+    height: auto;
+}
+
+#title{
+    font-size: 12em;
+    margin-bottom: 0px;
+    color: #3AFCD9;
+}
+
+#subtitle{
+    font-size: 5em;
+    margin-top: -50px;
+    color: #FFF1B0;
+}
+
+#fancy{
+    font-size: 4em;
+    margin-top: -50px;
+    color: #002B36;
+}
+
+.left{
+    text-align: left;
+}
+
+.command pre{
+    float: left;
+    width: 20%;
+    margin-left: 10%;
+}
+
+.reveal div .subcommands {
+    width: 50%;;
+    position: absolute;
+    margin-left: 35%;
+}
+
+.subcommand pre{
+    width: 100%;
+    float: left;
+    margin-left: 0px;
+}
+
+.reveal .small-one{
+    width: 10%
+}
+
+.reveal .small-two{
+    width: 20%
+}
+
+.reveal .small-three{
+    width: 30%
+}
+
+
+.reveal .small-four{
+    width: 40%
+}
+
+.reveal .large-one{
+    width: 80%;
+    margin-left: 12%;
+}
+
+.reveal .large-two{
+    width: 70%;
+    margin-left: 22%;
+}
+
+.large-three{
+    width: 60%;
+    margin-left: 32%;
+}
+
+.reveal div .subcommand-description{
+    margin-top: 20px;
+    position: static;
+}
+
+.command{
+    height: 120px;
+}
+.command pre code {
+    overflow: hidden
+}

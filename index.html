@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Git Basics - A Git Introduction</title>
+
+  <!-- FONT-AWESOME -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <meta name="description" content="A brief introduction to Git, version control tool">
+
+  <meta name="author" content="João Costa">
+  <meta name="author" content="Martinho Aragão">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+
+    <div class="slides">
+      <!-- SLIDE 1 -->
+      <section>
+        <section>
+          <img id="logo" src="img/cesium.png" height="232" width="244" alt="CeSIUM">
+          <h1 id="title">GIT</h1>
+          <h3 id="subtitle">BASICS</h3>
+        </section>
+        <section>
+          <p>
+            <h2> João Costa </h2>
+            <a href="http://github.com/joaofcosta"><i class="fa fa-github"></i></a>
+            <a href="http://joaofcosta.github.io"><i class="fa fa-globe"></i></a>
+
+            <h2> Martinho Aragão </h2>
+            <a href="http://github.com/martinhoaragao"><i class="fa fa-github"></i></a>
+            <a href="http://twitter.com/martinhoaragao"><i class="fa fa-twitter"></i></a>
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <!-- SLIDE 3 -->
+        <section data-background="#82E8AE">
+          <h3 class="colord">What is</h3><br>
+          <h2 id="fancy">Version Control?</h2>
+            <i class="fa fa-code-fork colorf"></i><span class="colord"> What is it good for?</span><br>
+            <i class="fa fa-code-fork colorf"></i><span class="colord"> Why do I need it?</span>
+          </section>
+
+          <!-- SLIDE 4 -->
+          <section>
+            <h2> Routine </h2>
+            <pre class="small-four"><code class="cpp">void routine() {
+  create;
+
+  while(!over){
+    edit;
+    save;
+  }
+}</code></pre>
+          </section>
+
+          <!-- SLIDE 5 -->
+          <section>
+            <h2> Remote </h2>
+            <br>
+            <p> <i class="fa fa-code-fork colorc fragment"><span class="colora"> What happened?</i> </span></p>
+            <p> <i class="fa fa-code-fork colorc fragment"><span class="colora"> Why did it happen?</i> </span></p>
+            <p> </p><i class="fa fa-code-fork colorc fragment"><span class="colora"> Who did it?</i> </span></p>
+            <p> <i class="fa fa-code-fork colorc fragment"><span class="colora"> When?</i> </span></p>
+            <h5 class="fragment colorb">Commits</h5>
+          </section>
+      </section>
+
+      <section>
+
+        <!-- SLIDE 6 -->
+        <section data-background="#82E8AE">
+          <h1 class="colorf"> Installing Git </h1>
+        </section>
+
+        <!-- SLIDE 7 -->
+        <section>
+        <h2>Linux</h2>
+
+        <h5 class="left">Debian/Ubuntu</h5>
+  	<pre><code data-trim>$ apt-get install git</code></pre>
+
+        <h5 class="left">Arch</h5>
+        <pre><code data-trim>$ pacman -S git</code></pre>
+
+        <h5 class="left">Fedora</h5>
+        <pre><code data-trim>$ yum install git</code></pre>
+        </section>
+
+        <!-- SLIDE 8 -->
+        <section>
+        <h2>Mac</h2>
+        <pre><code data-trim>brew install git</code></pre>
+        <br>
+        <br>
+        <br>
+        <h2>Windows</h2>
+        <a href="http://git-scm.com/download/win">Download</a>
+	 </section>
+      </section>
+
+  	 	<section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf"> Git Setup </h1>
+        </section>
+        <section>
+  	 		  <h2>First-Time</h2>
+          <p>Setup your username and email first of all to give you credit for the
+          code you are developing.</p>
+  			 <pre><code data-trim>$ git config --global <span class="colorb">user.name</span> "John Doe"
+$ git config --global <span class="colorb">user.email</span> johndoe@example.com</code></pre>
+          <br>
+          <p>See configuration</p>
+          <pre><code data-trim>$ git config --list</code></pre>
+        </section>
+
+        <section>
+          <h2>Creating a Git Repository</h2>
+                        <div class="command">
+                          <pre><code data-trim>
+$ git init
+          </code></pre>
+                            <div class="subcommands">
+                              <div class="subcommand small-two">
+                                <pre><code data-trim>
+path
+          </code></pre>
+                              </div>
+                              <div class="subcommand-description large-two left">
+                                <small><br>will create new directory if needed</small>
+                              </div>
+                            </div>
+                          </div>
+                          <p>Initialises a .git directory in your folder</p>
+                        </section>
+  	 	</section>
+
+
+		<!-- SLIDE 11 -->
+      <section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf">Git Staging</h1>
+        </section>
+        <!-- SLIDE 13 -->
+        <section>
+        <h2>The Three States</h2>
+        <p>Your files can have three states:
+          <ol>
+             <li>Modified</li>
+             <li>Staged</li>
+             <li>Commited</li>
+           </ol>
+         </p>
+        </section>
+
+        <section>
+        <h3>1. Working Directory</h3>
+        <p>These are the files that are under Git control and are unstaged. <br></p>
+        </section>
+
+        <section>
+        <h3>2. The Staging Area</h3>
+        <p>
+        Seeing file status:
+        <pre><code data-trim>$ git status</code></pre>
+        <br>After you've done your changes, you can stage files with:
+
+          <pre><code data-trim>$ git add &lt;<span class="colorc">filename</span>&gt; (Add files)
+$ git add --all (To add all files)</code></pre>
+
+          An example:
+
+          <pre><code data-trim>$ git add git.c git.h</code></pre>
+
+          These files you added to the staging area will be commited to your local database.
+        </p>
+        </section>
+
+        <section>
+        <h3>3. Commiting</h3>
+        <p>When you have added all the files you wish to commit just run:
+
+        <pre><code data-trim>$ git commit</code></pre>
+
+        Some examples:
+
+        <pre><code data-trim>$ git commit -m "Add slide about pushing to a repository"</code></pre>
+
+        After commiting your files, the data will be safely stored
+        on your local database.</p>
+        </section>
+		  </section>
+
+      <!-- BRANCHES -->
+      <section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf">Branches</h1>
+        </section>
+
+        <section>
+          <h1>Why Branches?</h1>
+        </section>
+
+        <section>
+          <h2>Branching</h2>
+          <p>To create a branch
+          <pre><code data-trim>$ git branch test</code></pre>
+          To change branch
+          <pre><code data-trim>$ git checkout test</code></pre>
+          <br>
+          Or better yet!
+          <pre><code data-trim>$ git checkout -b test</code></pre>
+        </p>
+        </section>
+
+        <section>
+          <p>Listing all branchs</p>
+          <pre><code data-trim>$ git branch</code></pre>
+        </section>
+      </section>
+
+      <!-- MERGING -->
+      <section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf">MERGING</h1>
+        </section>
+
+        <section>
+          <h2>Merging</h2>
+        <p>Do it when you have finished working on your feature, bug fix, etc.</p>
+        </section>
+
+        <section>
+          <p>
+            <ol>
+              <li>Change to the branch you wish to merge your work</li>
+              <pre><code data-trim>$ git checkout &lt;<span class="colorc">branch-name</span>&gt;</code></pre>
+              <li>Merge the changes</li>
+              <pre><code data-trim>$ git merge &lt;<span class="colorc">branch-name</span>&gt;</code></pre>
+            </ol>
+          </p>
+            An example
+            <pre><code data-trim>$ git checkout master
+$ git merge test</code></pre>
+        </section>
+      </section>
+
+      <!-- YOUR TURN NOW -->
+      <section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf">Your turn now</h1>
+        </section>
+      </section>
+
+      <!-- REMOTE -->
+      <section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf">Working Remote</h1>
+        </section>
+        <section>
+          <h2>Signup for a Github account</h2>
+          <a href="https://github.com">
+          <img src="img/git_homepage.png" height="300" width="820" alt="Git Homepage"></a>
+        </section>
+        <section>
+          <h2>BitBucket</h2>
+          <a href="https://bitbucket.com">
+          <img src="img/bitbucket_homepage.png" height="300" width="820" alt="BitBucket Homepage"></a>
+        </section>
+        <section>
+          <h2>Clone</h2>
+          <img src="img/github_clone.png" height="400" width="820" alt="GitHub Clone"></a>
+          <pre><code data-trim>$ git clone &lt;<span class="colorc">address</span>&gt;</code></pre>
+        </section>
+
+      <section>
+        <h2>Pushing</h2>
+        <p>All commits done? Want to share what you've done? <br>
+        <br>
+        <pre><code data-trim>$ git push origin &lt;<span class="colorc">branch name</span>&gt;</code></pre></p>
+
+        An example:
+
+        <pre><code data-trim>$ git push -u origin master</code></pre>
+
+      </section>
+      <section>
+        <h2>Pulling</h2>
+        <p>Need to grab what the others did?<br>
+        This is when to use push.
+
+        <pre><code data-trim>$ git pull origin &lt;<span class="colorc">branch name</span>&gt;</code></pre></p>
+
+        An example:
+
+        <pre><code data-trim>$ git pull -u origin master
+$ git pull </code></pre>
+
+      </section>
+      </section>
+
+      <!-- WANNA LEARN MORE -->
+      <section>
+        <section data-background="#82E8AE">
+          <h1 class="colorf">Wanna learn more?</h1>
+        </section>
+
+        <section>
+          <a href="http://git-scm.com/"><h2>Getting Help</h2></a>
+          <pre><code data-trim>$ git help <command>
+$ git <command> --help
+$ man git <command></code></pre>
+
+          <p>Example: Checking config help</p>
+          <pre><code data-trim>$ git help config</code></pre>
+        </section>
+
+        <section>
+          <h2>Git Documentation</h2>
+          <p><a href="http://git-scm.com/documentation">Documentation</a></p>
+        </section>
+      </section>
+
+    <section>
+      <section data-background="#82E8AE">
+        <h1 class="colorf">GUI Clients</h1>
+      </section>
+
+      <section>
+        <h2>MAC</h2>
+        <p>
+          <img src="img/git_for_mac.png" height="450" width="990" alt="Github for Mac">
+          <a href="https://mac.github.com">Download</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>Windows</h2>
+        <p>
+          <img src="img/git_for_windows.png" height="377" width="990" alt="Github for Windows">
+          <a href="https://windows.github.com">Download</a>
+        </p>
+      </section>
+
+      <section>
+        <h2>All GUI clients</h2>
+        <p>There are also other GUIs created by people outside Github. <br>
+          There is a full list with download links <a href="http://git-scm.com/download/gui/linux">here</a>.</p>
+      </section>
+    </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'plugin/zoom-js/zoom.js', async: true },
+        { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+      </script>
+
+    </body>
+    </html>
